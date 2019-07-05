@@ -1,0 +1,40 @@
+# Project: Robo
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = Main.o arvore.o fila.o lista.o Pilha.o
+LINKOBJ  = Main.o arvore.o fila.o lista.o Pilha.o
+LIBS     = -L"D:/Arquivos/Dev-Cpp/MinGW64/lib" -L"D:/Arquivos/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"D:/Arquivos/Dev-Cpp/MinGW64/include" -I"D:/Arquivos/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Arquivos/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"D:/Arquivos/Dev-Cpp/MinGW64/include" -I"D:/Arquivos/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Arquivos/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/Arquivos/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Robo.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+Main.o: Main.c
+	$(CC) -c Main.c -o Main.o $(CFLAGS)
+
+arvore.o: arvore.c
+	$(CC) -c arvore.c -o arvore.o $(CFLAGS)
+
+fila.o: fila.c
+	$(CC) -c fila.c -o fila.o $(CFLAGS)
+
+lista.o: lista.c
+	$(CC) -c lista.c -o lista.o $(CFLAGS)
+
+Pilha.o: Pilha.c
+	$(CC) -c Pilha.c -o Pilha.o $(CFLAGS)

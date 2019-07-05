@@ -1,0 +1,23 @@
+# numero de linhas do cenario
+30
+# numero de colunas do cenario
+30
+# posicao x inicial
+0
+# posicao y inicial
+0
+# acoes 
+AB(10)
+VO(5)
+DI(12)
+AB(8)
+DI(15)
+AC(4)
+VO(1)
+AC(3)
+ES(4)
+AC(2)
+ES(3)
+VO(2)
+AB(1)
+SA
